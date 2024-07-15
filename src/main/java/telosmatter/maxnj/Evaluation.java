@@ -17,6 +17,6 @@ public interface Evaluation {
      * @return the move evaluation for the given
      * player. The higher, the better the move is.
      */
-    public abstract double evaluateMove (Move move, Player player, GameState gameState);
+    public abstract <P, M> double evaluateMove (M move, P player, GameState <P, M> gameState);
 
 }
