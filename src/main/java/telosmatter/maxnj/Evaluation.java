@@ -1,7 +1,11 @@
 package telosmatter.maxnj;
 
+/**
+ * The evaluation function that you
+ * need to define.
+ */
 @FunctionalInterface
-public interface Evaluation {
+public interface Evaluation <P, M> {
 
     /**
      * Evaluate this <code>move</code>
@@ -17,6 +21,6 @@ public interface Evaluation {
      * @return the move evaluation for the given
      * player. The higher, the better the move is.
      */
-    public abstract <P, M> double evaluateMove (M move, P player, GameState <P, M> gameState);
+    public abstract double evaluateMove (M move, P player, GameState <P, M> gameState);
 
 }
