@@ -18,7 +18,7 @@ public interface Evaluation <P, M, G extends GameState <P, M, G>> {
      *
      * @return the game state evaluation for the given
      * player. The higher, the better that game
-     * state is, and thus the better the move that leads to it is.
+     * state for that player is.
      */
     public abstract double evaluate (G gameState, P player);
 
