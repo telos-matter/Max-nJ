@@ -5,7 +5,7 @@ package telosmatter.maxnj;
  * need to define / focus on.
  */
 @FunctionalInterface
-public interface Evaluation <P, M, G extends GameState <P, M>> {
+public interface Evaluation <P, M, G extends GameState <P, M, G>> {
 
     /**
      * Evaluate this <code>gameState</code>
