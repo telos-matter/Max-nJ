@@ -2,25 +2,24 @@ package telosmatter.maxnj;
 
 /**
  * The evaluation function that you
- * need to define.
+ * need to define / focus on.
  */
 @FunctionalInterface
-public interface Evaluation <P, M> {
+public interface Evaluation <P, M, G extends GameState <P, M>> {
 
     /**
-     * Evaluate this <code>move</code>
-     * that this <code>player</code>
-     * could take, that would result
-     * in this <code>gameState</code>.
+     * Evaluate this <code>gameState</code>
+     * for / from the perspective
+     * of this <code>player</code>.
      *
-     * @param move that could be taken
-     * @param player the player that wants to take the move. The one this move
-     *               should be evaluated for
-     * @param gameState that the game will be in, if the player made this move
+     * @param gameState the game state to evaluate.
+     * @param player the player for whom the game state
+     *               is evaluated.
      *
-     * @return the move evaluation for the given
-     * player. The higher, the better the move is.
+     * @return the game state evaluation for the given
+     * player. The higher, the better that game
+     * state is, and thus the better the move that leads to it is.
      */
-    public abstract double evaluateMove (M move, P player, GameState <P, M> gameState);
+    public abstract double evaluate (G gameState, P player);
 
 }
